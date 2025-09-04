@@ -176,13 +176,14 @@ const mockNews = [
 ];
 
 interface NewsDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function NewsDetailPage({ params }: NewsDetailPageProps) {
-  const newsId = parseInt(params.id);
+export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
+  const { id } = await params;
+  const newsId = parseInt(id);
   const news = mockNews.find(item => item.id === newsId);
 
   if (!news) {
