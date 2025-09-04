@@ -1,0 +1,218 @@
+import { useClickOutside } from "@/app/hooks/useClickOutside";
+import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useRef, useState } from "react";
+import LoginDropdown from "../shared/LoginDropdown";
+import LoginModal from "../shared/LoginModal";
+import Button from "../shared/ui/Button";
+import RegisterModal from "../shared/RegisterModal";
+import MarketplaceMobileMenu from "../shared/MarketplaceMobileMenu";
+import { useContactModal } from "@/app/contexts/ContactModalContext";
+
+
+export default function NavMarketplace() {
+  const [isMarketMobMenuOpen, setIsMarketMobMenuOpen] = useState(false);
+  const [isOpenLoginDropdown, setIsOpenLoginDropdown] = useState(false);
+  const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
+  const [isOpenRegisterModal, setIsOpenRegisterModal] = useState(false);
+
+  const loginRef = useRef<HTMLDivElement | null>(null);
+
+  useClickOutside(loginRef, () => setIsOpenLoginDropdown(false));
+
+  const { toggleContactManagerModal } = useContactModal();
+
+  function toggleMarketMobMenu() {
+    setIsMarketMobMenuOpen((open) => !open);
+    document.body.classList.toggle("overflow-hidden");
+  }
+
+  function toggleLoginModal() {
+    setIsOpenLoginModal((open) => !open);
+    document.body.classList.toggle("overflow-hidden");
+  }
+
+  function toggleRegisterModal() {
+    setIsOpenRegisterModal((open) => !open);
+    document.body.classList.toggle("overflow-hidden");
+  }
+
+  return (
+    <>
+      <div className="relative flex-between gap-8">
+        <div className="w-full flex-between gap-8">
+          {/* Logo & Search & Email */}
+          <div className="w-full flex items-center gap-5 xl:gap-10">
+            <Link href="/marketplace" className="flex items-center gap-4">
+              <Image
+                src="/assets/svgs/logo-marketplace.svg"
+                alt="Logo"
+                width={122}
+                height={36}
+                className="w-8 md:size-10 lg:size-12 shrink"
+              />
+
+              <p className="text-brand-brown-100 uppercase font-oswald font-medium text-xl md:text-3xl lg:hidden xl:block">
+                Маркетплейс
+              </p>
+            </Link>
+
+            {/* Search */}
+            <label
+              htmlFor="searchMarket"
+              className="relative max-w-96 3xl:max-w-[721px] w-full hidden lg:block"
+            >
+              <input
+                type="text"
+                className="w-full bg-brand-whitish-100 text-brand-dark-gray-100 text-sm leading-5 rounded-md outline-none py-3 3xl:py-4 pl-4 pr-10"
+                placeholder="Найти товар..."
+                id="searchMarket"
+              />
+              {/* Search Icon */}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 19 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute right-4 top-3 3xl:top-4 cursor-pointer"
+              >
+                <path
+                  d="M3.83745 7.38213C3.72863 7.38213 3.618 7.36074 3.51137 7.31571C3.08543 7.13544 2.88616 6.64397 3.06643 6.21797C4.19947 3.54038 7.29959 2.28382 9.97712 3.41687C10.4031 3.59714 10.6023 4.0886 10.4221 4.5146C10.2417 4.94061 9.75039 5.13976 9.32426 4.95955C7.49745 4.18653 5.38212 5.04389 4.60917 6.8707C4.47394 7.1902 4.16378 7.38213 3.83745 7.38213Z"
+                  fill="#3F3C39"
+                />
+                <path
+                  d="M18.7111 17.306L14.0273 12.6028C15.2316 11.2207 15.8914 9.48166 15.8914 7.67124C15.8914 3.44139 12.3269 0 7.94571 0C3.56452 0 0 3.44139 0 7.67124C0 11.9011 3.56452 15.3425 7.94571 15.3425C9.59048 15.3425 11.1579 14.8635 12.4979 13.9543L17.2173 18.6931C17.4146 18.8909 17.6799 19 17.9642 19C18.2333 19 18.4886 18.9009 18.6824 18.7208C19.0942 18.3383 19.1074 17.7039 18.7111 17.306ZM7.94571 2.00119C11.1841 2.00119 13.8186 4.54471 13.8186 7.67124C13.8186 10.7978 11.1841 13.3413 7.94571 13.3413C4.70732 13.3413 2.07279 10.7978 2.07279 7.67124C2.07279 4.54471 4.70732 2.00119 7.94571 2.00119Z"
+                  fill="#3F3C39"
+                />
+              </svg>
+            </label>
+
+            {/* Email */}
+            <div className="flex items-center gap-3">
+              <Image
+                src="/assets/svgs/message.svg"
+                alt="Message Icon"
+                width={26}
+                height={18}
+                className="shrink-0 hidden lg:block"
+              />
+
+              <div className="hidden xl:block space-y-1 whitespace-nowrap">
+                <p className="text-xs leading-4">Электронная почта</p>
+                <a
+                  href="mailto:info@arsenal-metiz.ru"
+                  className="text-brand-brown underline underline-offset-2 leading-4 text-sm"
+                >
+                  info@arsenal-metiz.ru
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact to manager & Sign in/up */}
+          <div className="flex items-center gap-5">
+            <Button
+              onClick={toggleContactManagerModal}
+              variant="secondary"
+              className="whitespace-nowrap hidden sm:flex-center"
+            >
+              Связаться <br className="hidden xl:block" /> с менеджером
+            </Button>
+
+            <div
+              className="relative z-20 hidden lg:flex items-center gap-5"
+              ref={loginRef}
+            >
+              <Link
+                href="/marketplace/cart"
+                className="hover:opacity-70 smooth-200"
+              >
+                <svg
+                  width="25"
+                  height="22"
+                  viewBox="0 0 31 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M30.0918 9.00024H26.8955L19.9025 0.338034C19.5893 -0.0499862 19.0178 -0.113046 18.626 0.197514C18.2344 0.508014 18.1708 1.07435 18.4842 1.46249L24.5694 9.00024H6.43062L12.5158 1.46249C12.8292 1.07435 12.7656 0.507954 12.374 0.197514C11.9823 -0.113046 11.4108 -0.0500462 11.0975 0.338034L4.10453 9.00024H0.908203C0.406633 9.00024 0 9.4032 0 9.90024V13.5002C0 13.9973 0.406633 14.4002 0.908203 14.4002H2.03958L5.48421 26.3475C5.53842 26.5356 5.65296 26.701 5.81052 26.8188C5.96808 26.9365 6.16007 27.0003 6.35742 27.0002H24.6426C24.8399 27.0002 25.0319 26.9365 25.1895 26.8188C25.3471 26.701 25.4616 26.5356 25.5158 26.3475L28.9604 14.4002H30.0918C30.5934 14.4002 31 13.9973 31 13.5002V9.90024C31 9.4032 30.5934 9.00024 30.0918 9.00024ZM23.9576 25.2002H7.04245L3.92864 14.4002H27.0714L23.9576 25.2002ZM29.1836 12.6002H1.81641V10.8002H29.1836V12.6002Z"
+                    fill="white"
+                  />
+                </svg>
+              </Link>
+              <button
+                className="hover:opacity-70 smooth-200 cursor-pointer"
+                onClick={() => setIsOpenLoginDropdown((open) => !open)}
+              >
+                <svg
+                  width="18"
+                  height="22"
+                  viewBox="0 0 23 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.9216 13.006C12.6808 13.006 14.2039 12.3652 15.4488 11.1007C16.6933 9.8366 17.3244 8.28979 17.3244 6.50283C17.3244 4.7164 16.6935 3.16944 15.4486 1.90482C14.2037 0.640828 12.6805 0 10.9216 0C9.16215 0 7.63917 0.640828 6.39453 1.90503C5.14989 3.16923 4.51869 4.71625 4.51869 6.50283C4.51869 8.28979 5.14984 9.83681 6.39458 11.101C7.63964 12.365 9.16277 13.006 10.9215 13.006H10.9216ZM7.49623 3.02379C8.45126 2.05374 9.57165 1.58224 10.9216 1.58224C12.2713 1.58224 13.3919 2.05374 14.3471 3.02379C15.3022 3.994 15.7666 5.13211 15.7666 6.50278C15.7666 7.87387 15.3022 9.01183 14.3471 9.98204C13.3919 10.9523 12.2713 11.4238 10.9216 11.4238C9.57201 11.4238 8.45172 10.9521 7.49623 9.98204C6.54095 9.01204 6.07652 7.87393 6.07652 6.50283C6.07652 5.13211 6.54095 3.994 7.49623 3.02379ZM22.1248 20.7617C22.0889 20.2356 22.0163 19.6616 21.9094 19.0557C21.8015 18.4451 21.6626 17.8679 21.4963 17.3403C21.3243 16.7951 21.0909 16.2566 20.8018 15.7406C20.5023 15.205 20.1502 14.7386 19.7551 14.3549C19.342 13.9534 18.8362 13.6306 18.2513 13.3951C17.6684 13.161 17.0224 13.0423 16.3314 13.0423C16.06 13.0423 15.7976 13.1554 15.2908 13.4906C14.9305 13.7288 14.5692 13.9654 14.2067 14.2004C13.8585 14.4258 13.3868 14.6369 12.8041 14.8281C12.2356 15.0149 11.6584 15.1097 11.0885 15.1097C10.519 15.1097 9.94174 15.0149 9.37284 14.8281C8.79082 14.6371 8.31886 14.426 7.9712 14.2006C7.56778 13.9388 7.20278 13.6998 6.88616 13.4903C6.37973 13.1552 6.11727 13.0421 5.84594 13.0421C5.15472 13.0421 4.50898 13.1609 3.92628 13.3954C3.34176 13.6304 2.83574 13.9532 2.4222 14.3551C2.02713 14.739 1.67506 15.2052 1.37569 15.7406C1.08711 16.2566 0.853469 16.7948 0.681457 17.3405C0.515311 17.8681 0.376424 18.4451 0.268533 19.0557C0.161421 19.6609 0.0890437 20.235 0.0531147 20.7623C0.0178087 21.2779 0 21.8145 0 22.3567C0 23.7661 0.441117 24.9071 1.31099 25.7486C2.17012 26.579 3.30671 27 4.68925 27H17.4893C18.8714 27 20.008 26.579 20.8674 25.7486C21.7375 24.9077 22.1786 23.7663 22.1786 22.3565C22.1784 21.8125 22.1603 21.2758 22.1248 20.7617ZM19.7933 24.6022C19.2256 25.151 18.4719 25.4178 17.4891 25.4178H4.6893C3.70629 25.4178 2.95262 25.151 2.38512 24.6025C1.82843 24.0642 1.55787 23.3294 1.55787 22.3567C1.55787 21.8508 1.57428 21.3513 1.6072 20.8717C1.63918 20.4012 1.70471 19.8843 1.8019 19.3352C1.8978 18.7928 2.01986 18.2838 2.16509 17.823C2.30444 17.3811 2.49447 16.9436 2.73014 16.5222C2.95506 16.1204 3.21383 15.7758 3.49939 15.4982C3.76652 15.2384 4.10323 15.0258 4.4999 14.8664C4.86677 14.7189 5.27912 14.6381 5.72673 14.6259C5.78124 14.6555 5.87844 14.7117 6.03581 14.8159C6.35606 15.0279 6.72516 15.2697 7.13325 15.5344C7.59327 15.8323 8.18584 16.1013 8.89388 16.3334C9.6177 16.5711 10.356 16.6919 11.0887 16.6919C11.8215 16.6919 12.5599 16.5711 13.2834 16.3336C13.992 16.1011 14.5844 15.8323 15.0451 15.534C15.4627 15.2629 15.8214 15.0281 16.1416 14.8159C16.299 14.7118 16.3962 14.6554 16.4508 14.626C16.8986 14.6381 17.3109 14.7189 17.6779 14.8663C18.0745 15.0258 18.4112 15.2386 18.6782 15.4981C18.9638 15.7756 19.2226 16.1203 19.4475 16.5224C19.6834 16.9436 19.8737 17.3814 20.0128 17.8228C20.1582 18.2842 20.2805 18.793 20.3762 19.335C20.4731 19.8852 20.5389 20.4022 20.5709 20.8719V20.8723C20.604 21.35 20.6206 21.8493 20.6208 22.3567C20.6206 23.3296 20.35 24.0642 19.7933 24.6022H19.7933Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
+
+              {/* Sign in/up dropdown */}
+              <AnimatePresence>
+                {isOpenLoginDropdown && (
+                  <LoginDropdown
+                    onToggleLoginModal={toggleLoginModal}
+                    onToggleRegisterModal={toggleRegisterModal}
+                  />
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={toggleMarketMobMenu}
+          className="lg:hidden cursor-pointer relative z-20"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* MarketPlace Mobile Menu */}
+      <AnimatePresence>
+        {isMarketMobMenuOpen && (
+          <MarketplaceMobileMenu
+            onToggle={toggleMarketMobMenu}
+            onToggleLoginModal={toggleLoginModal}
+            onToggleRegisterModal={toggleRegisterModal}
+            toggleContactManagerModal={toggleContactManagerModal}
+          />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isOpenLoginModal && <LoginModal onToggle={toggleLoginModal} />}
+        {isOpenRegisterModal && (
+          <RegisterModal onToggle={toggleRegisterModal} />
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
