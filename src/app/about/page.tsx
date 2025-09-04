@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Button from "../components/shared/ui/Button";
-import { useContactModal } from "../contexts/ContactModalContext";
 
 export default function AboutPage() {
   return (

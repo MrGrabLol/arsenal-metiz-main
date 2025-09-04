@@ -1,17 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Button from "../components/shared/ui/Button";
 
 export default function ContactsPage() {
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('ru-RU', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
-  };
 
   return (
     <>

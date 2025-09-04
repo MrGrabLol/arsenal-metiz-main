@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Button from "../components/shared/ui/Button";
 
 // Моковые данные для вакансий
