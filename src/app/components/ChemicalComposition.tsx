@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 
 const chemicalData = {
@@ -38,33 +38,6 @@ const chemicalData = {
 
 export default function ChemicalComposition() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [showScrollButton, setShowScrollButton] = useState(false);
-  const [isScrolledToEnd, setIsScrolledToEnd] = useState(false);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const checkScroll = () => {
-      setShowScrollButton(el.scrollWidth > el.clientWidth);
-      setIsScrolledToEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 5); // allow small margin
-    };
-
-    checkScroll();
-    el.addEventListener("scroll", checkScroll);
-    window.addEventListener("resize", checkScroll);
-
-    return () => {
-      el.removeEventListener("scroll", checkScroll);
-      window.removeEventListener("resize", checkScroll);
-    };
-  }, []);
-
-  const scrollToEnd = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.scrollTo({ left: el.scrollWidth, behavior: "smooth" });
-  };
 
   return (
     <div className="space-y-5 mt-10">
