@@ -2,19 +2,21 @@ import { motion } from "framer-motion";
 import Button from "./ui/Button";
 import { useClickOutside } from "@/app/hooks/useClickOutside";
 import { useRef } from "react";
+import { createPortal } from "react-dom";
 
 export default function LoginModal({ onToggle }: { onToggle: () => void }) {
   const loginRef = useRef(null);
 
   useClickOutside(loginRef, onToggle);
 
-  return (
+  const modalContent = (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed inset-0 z-50 flex-center bg-brand-dark/50 text-brand-dark-gray px-7"
+      className="fixed inset-0 flex items-center justify-center bg-black/70 text-brand-dark-gray px-7"
+      style={{ zIndex: 99999 }}
     >
       <div className="relative" ref={loginRef}>
         <button
@@ -63,4 +65,6 @@ export default function LoginModal({ onToggle }: { onToggle: () => void }) {
       </div>
     </motion.div>
   );
+
+  return typeof window !== 'undefined' ? createPortal(modalContent, document.body) : null;
 }

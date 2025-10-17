@@ -8,11 +8,11 @@ export default function LeaveRequest() {
   const { toggleContactManagerModal } = useContactModal();
 
   return (
-    <section>
+    <section className="pb-4">
       <div className="max-w-secondary mx-auto px-4">
-        <div className="flex-center text-center bg-brand-whitish-200 border border-brand-dark-gray/30 rounded-md mt-8 p-8">
-          <div className="space-y-4">
-            <div className="space-y-3">
+        <div className="flex-center text-center bg-brand-whitish-200 border border-brand-dark-gray/30 rounded-md mt-4 p-6">
+          <div className="space-y-3">
+            <div className="space-y-2">
               <Image
                 src="/assets/svgs/find.svg"
                 alt="catalog"

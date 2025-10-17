@@ -91,6 +91,16 @@ export default function LatestNews() {
   const [slidesPerView, setSlidesPerView] = useState(4);
   const swiperRef = useRef<SwiperType | null>(null);
 
+  const scrollToSubscribe = () => {
+    const subscribeSection = document.getElementById('subscribe');
+    if (subscribeSection) {
+      subscribeSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
 
 
   const formatSlideNumber = (number: number) => {
@@ -188,13 +198,15 @@ export default function LatestNews() {
 
         <div className="flex flex-col-reverse sm:flex-row items-end sm:items-center justify-between gap-6 md:gap-3">
           <div className="w-full flex flex-col xs:flex-row items-stretch justify-center gap-2.5 md:gap-3">
-                            <Link
-          href="/news"
-          className="xl:min-w-40 xl:h-12 text-white bg-brand-brown border-brand-brown hover:opacity-80 py-1.5 sm:py-2.5 px-4 lg:ml-32 relative z-10 text-xs/5 xs:text-sm/4 cursor-pointer border smooth-200 inline-flex items-center justify-center"
-        >
-          Пресс-центр
-        </Link>
-            <Button variant="outline">Подписаться на новости</Button>
+            <Button 
+              variant="primary" 
+              isLink 
+              href="/news"
+              className="lg:ml-32"
+            >
+              Пресс-центр
+            </Button>
+            <Button variant="outline" onClick={scrollToSubscribe} className="!min-w-[120px]">Подписаться на новости</Button>
           </div>
 
           <div className="flex items-center gap-5 text-brand-dark-gray whitespace-nowrap">

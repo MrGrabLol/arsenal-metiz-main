@@ -5,37 +5,37 @@ import Image from "next/image";
 export default function page() {
   return (
     <div className="bg-brand-whitish-200">
-      <div className="max-w-[1920px] mx-auto bg-white space-y-5 pt-28 lg:pt-56.5 pb-12.5 sm:px-7.5">
+      <div className="max-w-6xl mx-auto bg-white space-y-3 pt-30 lg:pt-46 pb-8 px-4">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 md:gap-4 lg:gap-7.5 text-xs sm:text-sm lg:text-2xl/6 font-medium text-brand-dark-gray/50 pl-4 sm:pl-0">
+        <div className="flex items-center gap-2 md:gap-3 text-xs sm:text-sm font-medium text-brand-dark-gray/50">
           <span>Главная</span>
           <Image
             src="/assets/svgs/arrow.svg"
             alt="Arrow icon"
             width={37}
             height={18}
-            className="w-4 h-2 md:w-6 md:h-3 lg:size-auto"
+            className="w-3 h-1.5 md:w-4 md:h-2"
           />
           <span className="text-gray-900">Корзина</span>
         </div>
 
-        <div className="space-y-7.5 lg:space-y-10 2xl:space-y-12.5 bg-brand-whitish-200 border border-brand-dark-gray/30 sm:rounded-md p-6 lg:p-9 2xl:p-12.5">
-          <div className="space-y-3.75">
-            <h2>Ваша корзина</h2>
-            <p className="text-2xl/6 font-medium">
+        <div className="space-y-4 lg:space-y-5 bg-brand-whitish-200 border border-brand-dark-gray/30 sm:rounded-md p-4 lg:p-5">
+          <div className="space-y-2">
+            <h2 className="text-xl lg:text-2xl">Ваша корзина</h2>
+            <p className="text-lg lg:text-xl font-medium">
               <span className="text-brand-dark-gray/50">Всего товаров:</span> 3
             </p>
           </div>
 
           {/* Products */}
-          <div className="space-y-7.5 lg:space-y-10 2xl:space-y-12.5">
+          <div className="space-y-3 lg:space-y-4">
             <CartProduct />
             <CartProduct />
             <CartProduct />
           </div>
 
-          <div className="space-y-6 sm:space-y-7.5">
-            <p className="text-2xl/6 sm:text-[35px]/9 font-bold">
+          <div className="space-y-3 sm:space-y-4">
+            <p className="text-xl sm:text-2xl font-bold">
               Итого: 295 000 ₽
             </p>
             <div className="flex items-center gap-5">

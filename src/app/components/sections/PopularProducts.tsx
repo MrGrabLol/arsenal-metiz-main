@@ -4,16 +4,7 @@ import ProductCard from "../shared/ProductCard";
 export default function PopularProducts() {
   return (
     <section id="popular-products" className="pt-24 lg:pt-40 pb-8">
-      <div className="max-w-secondary mx-auto space-y-6 px-4">
-        <div className="flex items-center gap-3 xl:ml-107.5">
-          <h2 className="text-brand-dark-gray text-lg lg:text-xl">Популярные товары</h2>
-          <Image
-            src="/assets/svgs/flame.svg"
-            alt="Flame icon"
-            width={28}
-            height={36}
-          />
-        </div>
+      <div className="max-w-secondary mx-auto px-4">
         <div className="flex flex-col xl:flex-row xl:items-stretch gap-4">
           <div className="xl:w-80 flex-center text-center bg-brand-whitish-200 border border-brand-dark-gray-100/30 rounded-md p-4">
             <div className="space-y-3">
@@ -51,6 +42,15 @@ export default function PopularProducts() {
             </div>
           </div>
           <div className="flex-1 space-y-4">
+            <div className="flex items-center gap-3 mb-4">
+              <h2 className="text-brand-dark-gray text-lg lg:text-xl">Популярные товары</h2>
+              <Image
+                src="/assets/svgs/flame.svg"
+                alt="Flame icon"
+                width={28}
+                height={36}
+              />
+            </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
               <ProductCard />
               <ProductCard />

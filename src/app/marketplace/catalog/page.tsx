@@ -16,10 +16,10 @@ export default function CatalogPage() {
 
   return (
     <>
-      <section className="pt-24 lg:pt-52 pb-12.5">
+      <section className="pt-20 lg:pt-44 pb-12.5">
         <div className="max-w-secondary mx-auto px-4">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 md:gap-4 lg:gap-7.5 text-xs sm:text-sm lg:text-2xl/6 font-medium text-brand-dark-gray/50 lg:pl-7.5">
+          <div className="flex items-center gap-2 md:gap-4 lg:gap-7.5 text-xs sm:text-xs lg:text-base font-medium text-brand-dark-gray/50 lg:pl-7.5">
             <span>Главная</span>
             <Image
               src="/assets/svgs/arrow.svg"
@@ -39,7 +39,7 @@ export default function CatalogPage() {
             <span className="text-gray-900">Проволока легированная</span>
           </div>
 
-          <div className="flex gap-7.5 mt-5 lg:mt-10">
+          <div className="flex gap-7.5 mt-1 lg:mt-4">
             <Filter isOpen={isOpenFilter} />
             <div
               onClick={toggleFilter}
@@ -63,7 +63,7 @@ export default function CatalogPage() {
 
             {/* Catalog Items */}
             <div className="flex-1">
-              <h2>Проволока ЛЕГИРОВАННАЯ</h2>
+              <h2 className="text-2xl lg:text-3xl font-medium">Проволока ЛЕГИРОВАННАЯ</h2>
 
               {/* Filters button */}
               <button
@@ -139,7 +139,7 @@ export default function CatalogPage() {
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-5 xl:gap-7.5 mt-8">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-5 xl:gap-7.5 mt-4">
                 {Array.from({ length: 15 }, (_, index) => (
                   <ProductCard key={index} />
                 ))}

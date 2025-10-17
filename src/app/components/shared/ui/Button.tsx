@@ -55,7 +55,7 @@ const Button: FC<ButtonProps> = ({
 
   return (
     <button
-      className={classes}
+      className={`flex-center ${classes}`}
       {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
     >
       {children}

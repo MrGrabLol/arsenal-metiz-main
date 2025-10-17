@@ -42,9 +42,9 @@ export default function ProductDetails() {
 
   return (
     <section className="">
-      <div className="max-w-secondary mx-auto px-4">
+      <div className="max-w-secondary mx-auto px-4 text-[0.92rem] sm:text-[0.95rem] lg:text-base">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 md:gap-4 lg:gap-7.5 text-xs sm:text-sm lg:text-2xl/6 font-medium text-brand-dark-gray/50 lg:pl-7.5 md:px-16 lg:px-0">
+        <div className="flex items-center gap-2 md:gap-4 lg:gap-7.5 text-[10px] sm:text-xs lg:text-lg/6 font-medium text-brand-dark-gray/50 lg:pl-7.5 md:px-16 lg:px-0">
           <span>Главная</span>
           <Image
             src="/assets/svgs/arrow.svg"
@@ -74,42 +74,44 @@ export default function ProductDetails() {
 
         <div className="flex flex-col lg:flex-row lg:items-stretch mt-7.5 gap-8 md:px-16 lg:px-0">
           {/* Product Image */}
-          <div className="lg:w-1/2 xl:w-[45%] 2xl:w-1/2 3xl:w-[759px] flex flex-col items-center gap-7.5 bg-brand-whitish-200 rounded-md pt-12.5 pb-7.5">
+          <div className="lg:w-2/5 flex flex-col items-center gap-5 bg-brand-whitish-200 rounded-md pt-9 pb-5">
             <Image
               src="/assets/images/product-image.png"
               alt="Product Image"
               width={2088}
               height={2427}
-              className="max-w-[80%] mx-auto lg:max-w-100 xl:max-w-[432px]"
+              className="max-w-[55%] mx-auto lg:max-w-72 xl:max-w-[300px]"
             />
 
-            <button className="flex items-center gap-2.5 cursor-pointer hover:opacity-80 smooth-200">
+            <div className="mt-8">
+              <button className="flex items-center gap-2 cursor-pointer hover:opacity-80 smooth-200 border border-brand-dark-gray/30 rounded-md px-3 py-2">
               <Image
                 src="/assets/svgs/download.svg"
                 alt="Product Image"
                 width={22}
                 height={23}
               />
-              <span className="text-lg lg:text-2xl/6 font-medium">
+              <span className="text-base lg:text-lg/6 font-medium">
                 Загрузить сертификат
               </span>
-            </button>
+              </button>
+            </div>
           </div>
 
           {/* Details */}
-          <div className="flex-1 space-y-7.5 bg-brand-whitish-200 p-5 sm:p-8 3xl:p-12.5">
-            <h2>св-08г2с-о</h2>
+          <div className="lg:w-3/5 space-y-6 bg-brand-whitish-200 p-4 sm:p-6 3xl:p-10">
+            <h2 className="text-2xl md:text-3xl font-semibold">св-08г2с-о</h2>
 
-            <ul className="space-y-5">
+            <ul className="space-y-3.5">
               <li className="w-full flex-between">
-                <div className="flex items-center gap-3 sm:gap-4.5">
+                <div className="flex items-center gap-3 sm:gap-3.5">
                   <Image
                     src="/assets/svgs/certificate.svg"
                     alt="Standard"
                     width={34}
                     height={40}
                   />
-                  <span className="leading-4 sm:text-lg/4.5 xl:text-xl/5 2xl:text-[22px]/5.5">
+                  <span className="leading-4 text-xs/4.5 xl:text-sm/5 2xl:text-[16px]/5.5">
                     Стандарт:
                   </span>
                 </div>
@@ -121,31 +123,31 @@ export default function ProductDetails() {
                 />
               </li>
               <li className="w-full flex-between">
-                <div className="flex items-center gap-3 sm:gap-4.5">
+                <div className="flex items-center gap-3 sm:gap-3.5">
                   <Image
                     src="/assets/svgs/factory.svg"
                     alt="Producer"
                     width={42}
                     height={35}
                   />
-                  <span className="leading-4 sm:text-lg/4.5 xl:text-xl/5 2xl:text-[22px]/5.5">
+                  <span className="leading-4 text-xs/4.5 xl:text-sm/5 2xl:text-[16px]/5.5">
                     Производитель:
                   </span>
                 </div>
 
-                <p className="leading-4 sm:text-lg/4.5 xl:text-xl/5 2xl:text-[22px]/5.5 uppercase">
+                <p className="leading-4 text-xs/4.5 xl:text-sm/5 2xl:text-[16px]/5.5 uppercase">
                   Ферратрейд
                 </p>
               </li>
               <li className="w-full flex-between">
-                <div className="flex items-center gap-3 sm:gap-4.5">
+                <div className="flex items-center gap-3 sm:gap-3.5">
                   <Image
                     src="/assets/svgs/diameters.svg"
                     alt="Diameters"
                     width={35}
                     height={35}
                   />
-                  <span className="leading-4 sm:text-lg/4.5 xl:text-xl/5 2xl:text-[22px]/5.5">
+                  <span className="leading-4 text-xs/4.5 xl:text-sm/5 2xl:text-[16px]/5.5">
                     Доступные диаметры:
                   </span>
                 </div>
@@ -157,14 +159,14 @@ export default function ProductDetails() {
                 />
               </li>
               <li className="w-full flex-between">
-                <div className="flex items-center gap-3 sm:gap-4.5">
+                <div className="flex items-center gap-3 sm:gap-3.5">
                   <Image
                     src="/assets/svgs/packaging.svg"
                     alt="Package"
                     width={37}
                     height={31}
                   />
-                  <span className="leading-4 sm:text-lg/4.5 xl:text-xl/5 2xl:text-[22px]/5.5">
+                  <span className="leading-4 text-xs/4.5 xl:text-sm/5 2xl:text-[16px]/5.5">
                     Доступные упаковки:
                   </span>
                 </div>
@@ -175,12 +177,34 @@ export default function ProductDetails() {
                   className="w-full"
                 />
               </li>
-              <li className="w-full flex-between text-lg/4.5s xl:text-xl/5 2xl:text-[22px]5.5">
-                <p>Цена:</p>
-                100000 ₽/Т
+              <li className="w-full flex-between">
+                <div className="flex items-center gap-3 sm:gap-3.5">
+                  <Image
+                    src="/assets/svgs/cart.svg"
+                    alt="Price"
+                    width={35}
+                    height={35}
+                  />
+                  <span className="leading-4 text-xs/4.5 xl:text-sm/5 2xl:text-[16px]/5.5">
+                    Цена:
+                  </span>
+                </div>
+                <p className="leading-4 text-sm/4.5 xl:text-base/5 2xl:text-[18px]/5.5">
+                  100000 ₽/Т
+                </p>
               </li>
-              <li className="w-full flex-between text-lg/4.5s xl:text-xl/5 2xl:text-[22px]5.5">
-                <p>Склад:</p>
+              <li className="w-full flex-between">
+                <div className="flex items-center gap-3 sm:gap-3.5">
+                  <Image
+                    src="/assets/svgs/location.svg"
+                    alt="Warehouse"
+                    width={35}
+                    height={35}
+                  />
+                  <span className="leading-4 text-xs/4.5 xl:text-sm/5 2xl:text-[16px]/5.5">
+                    Склад:
+                  </span>
+                </div>
                 <div className="flex flex-col xl:flex-row items-end xl:items-center gap-3.75">
                   <div className="flex items-center gap-2.5">
                     <span>Матросово</span>
@@ -201,10 +225,20 @@ export default function ProductDetails() {
                   </div>
                 </div>
               </li>
-              <li className="w-full flex-between text-lg/4.5s xl:text-xl/5 2xl:text-[22px]5.5">
-                <p>Количество:</p>
+              <li className="w-full flex-between">
+                <div className="flex items-center gap-3 sm:gap-3.5">
+                  <Image
+                    src="/assets/svgs/product.svg"
+                    alt="Quantity"
+                    width={35}
+                    height={35}
+                  />
+                  <span className="leading-4 text-xs/4.5 xl:text-sm/5 2xl:text-[16px]/5.5">
+                    Количество:
+                  </span>
+                </div>
                 <div className="flex items-center gap-1.25">
-                  <button className="size-10 shrink flex-center bg-white rounded-md cursor-pointer hover:bg-brand-brown-100/50 smooth-200">
+                  <button className="size-8 shrink flex-center bg-white rounded-md cursor-pointer hover:bg-brand-brown-100/50 smooth-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -220,8 +254,8 @@ export default function ProductDetails() {
                       />
                     </svg>
                   </button>
-                  <p className="text-xl/5 p-2.5">1 кг</p>
-                  <button className="size-10 shrink flex-center bg-white rounded-md cursor-pointer hover:bg-brand-brown-100/50 smooth-200">
+                  <p className="text-base/5 p-1.5">1 кг</p>
+                  <button className="size-8 shrink flex-center bg-white rounded-md cursor-pointer hover:bg-brand-brown-100/50 smooth-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -242,14 +276,14 @@ export default function ProductDetails() {
             </ul>
 
             {/* Cost */}
-            <div className="flex-between flex-col items-end md:flex-row md:items-center lg:flex-col lg:items-end 2xl:items-center 2xl:flex-row gap-5">
-              <p className="text-3xl/7.5 3xl:text-[35px]/8.75 font-bold">
+            <div className="flex-between flex-col items-end md:flex-row md:items-center lg:flex-col lg:items-end 2xl:items-center 2xl:flex-row gap-3.5">
+              <p className="text-xl/7 3xl:text-[26px]/8 font-bold">
                 Итого: 100000 ₽/Т
               </p>
 
               <Button
                 variant="primary"
-                className="!h-auto flex items-center gap-5 !text-base rounded-md !p-3 lg:!p-5"
+                className="!h-auto flex items-center gap-3 !text-sm rounded-md !p-2 lg:!p-3.5"
               >
                 Добавить в корзину
                 <svg
@@ -280,81 +314,81 @@ export default function ProductDetails() {
         <ChemicalComposition />
         <MechanicalProperties />
 
-        <div className="space-y-10 mt-12.5">
-          <h2>Что делает нас лучшим выбором:</h2>
+        <div className="space-y-6 mt-10">
+          <h2 className="text-2xl md:text-3xl font-semibold text-center">Что делает нас лучшим выбором?</h2>
 
           <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 xl:gap-7.5">
             {/* 1 */}
-            <div className="h-28 xl:h-32 3xl:h-37.5 flex items-center bg-brand-whitish-200 border border-brand-dark-gray/30 divide-x divide-brand-dark-gray/30 rounded-md">
-              <div className="h-full w-28 xl:w-32 3xl:w-37.5 flex-center">
+            <div className="h-20 xl:h-24 flex items-center bg-brand-whitish-200 border border-brand-dark-gray/30 divide-x divide-brand-dark-gray/30 rounded-md">
+              <div className="h-full w-20 xl:w-24 flex-center">
                 <Image
                   src="/assets/svgs/best-choise-icon-1.svg"
                   alt="Fast"
                   width={72}
                   height={98}
-                  className="w-12 h-18 xl:w-16 xl:h-24 3xl:size-auto"
+                  className="w-8 h-12 xl:w-10 xl:h-14"
                 />
               </div>
               <div className="flex-1">
-                <div className="space-y-2.5 3xl:space-y-3.5 px-5 3xl:px-7.5">
-                  <p className="text-lg/5 xl:text-xl/6 3xl:text-2xl/7">
+                <div className="space-y-1.5 px-3 xl:px-4">
+                  <p className="text-sm/4 xl:text-base/5">
                     Высокое <br /> качество
                   </p>
                 </div>
               </div>
             </div>
             {/* 2 */}
-            <div className="h-28 xl:h-32 3xl:h-37.5 flex items-center bg-brand-whitish-200 border border-brand-dark-gray/30 divide-x divide-brand-dark-gray/30 rounded-md">
-              <div className="h-full w-28 xl:w-32 3xl:w-37.5 flex-center">
+            <div className="h-20 xl:h-24 flex items-center bg-brand-whitish-200 border border-brand-dark-gray/30 divide-x divide-brand-dark-gray/30 rounded-md">
+              <div className="h-full w-20 xl:w-24 flex-center">
                 <Image
                   src="/assets/svgs/best-choise-icon-2.svg"
                   alt="Fast"
                   width={85}
                   height={86}
-                  className="w-12 h-18 xl:w-16 xl:h-24 3xl:size-auto"
+                  className="w-8 h-12 xl:w-10 xl:h-14"
                 />
               </div>
               <div className="flex-1">
-                <div className="space-y-2.5 3xl:space-y-3.5 px-5 3xl:px-7.5">
-                  <p className="text-lg/5 xl:text-xl/6 3xl:text-2xl/7">
+                <div className="space-y-1.5 px-3 xl:px-4">
+                  <p className="text-sm/4 xl:text-base/5">
                     Гарантия <br /> сертификации
                   </p>
                 </div>
               </div>
             </div>
             {/* 3 */}
-            <div className="h-28 xl:h-32 3xl:h-37.5 flex items-center bg-brand-whitish-200 border border-brand-dark-gray/30 divide-x divide-brand-dark-gray/30 rounded-md">
-              <div className="h-full w-28 xl:w-32 3xl:w-37.5 flex-center">
+            <div className="h-20 xl:h-24 flex items-center bg-brand-whitish-200 border border-brand-dark-gray/30 divide-x divide-brand-dark-gray/30 rounded-md">
+              <div className="h-full w-20 xl:w-24 flex-center">
                 <Image
                   src="/assets/svgs/best-choise-icon-3.svg"
                   alt="Fast"
                   width={80}
                   height={99}
-                  className="w-12 h-18 xl:w-16 xl:h-24 3xl:size-auto"
+                  className="w-8 h-12 xl:w-10 xl:h-14"
                 />
               </div>
               <div className="flex-1">
-                <div className="space-y-2.5 3xl:space-y-3.5 px-5 3xl:px-7.5">
-                  <p className="text-lg/5 xl:text-xl/6 3xl:text-2xl/7">
+                <div className="space-y-1.5 px-3 xl:px-4">
+                  <p className="text-sm/4 xl:text-base/5">
                     Соответствие <br /> ГОСТ
                   </p>
                 </div>
               </div>
             </div>
             {/* 4 */}
-            <div className="h-28 xl:h-32 3xl:h-37.5 flex items-center bg-brand-whitish-200 border border-brand-dark-gray/30 divide-x divide-brand-dark-gray/30 rounded-md">
-              <div className="h-full w-28 xl:w-32 3xl:w-37.5 flex-center">
+            <div className="h-20 xl:h-24 flex items-center bg-brand-whitish-200 border border-brand-dark-gray/30 divide-x divide-brand-dark-gray/30 rounded-md">
+              <div className="h-full w-20 xl:w-24 flex-center">
                 <Image
                   src="/assets/svgs/best-choise-icon-4.svg"
                   alt="Fast"
                   width={106}
                   height={63}
-                  className="w-16 h-10 xl:w-24 xl:h-16 3xl:size-auto"
+                  className="w-12 h-16 xl:w-14 xl:h-18"
                 />
               </div>
               <div className="flex-1">
-                <div className="space-y-2.5 3xl:space-y-3.5 px-5 3xl:px-7.5">
-                  <p className="text-lg/5 xl:text-xl/6 3xl:text-2xl/7">
+                <div className="space-y-1.5 px-3 xl:px-4">
+                  <p className="text-sm/4 xl:text-base/5">
                     Быстрая <br /> доставка
                   </p>
                 </div>

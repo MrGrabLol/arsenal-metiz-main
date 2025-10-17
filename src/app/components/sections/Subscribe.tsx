@@ -3,7 +3,7 @@ import Button from "../shared/ui/Button";
 
 export default function Subscribe() {
   return (
-    <section className="bg-brand-whitish-200">
+    <section id="subscribe" className="bg-brand-whitish-200">
       <div className=" max-w-secondary mx-auto flex-center text-center 00 mt-8 py-8 px-4">
         <div className="space-y-4">
           <div className="space-y-3">

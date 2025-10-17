@@ -46,7 +46,7 @@ export default function MarketplaceLinks() {
   };
 
   return (
-    <div className="w-full hidden lg:flex font-oswald font-medium text-white leading-5 xl:text-xl/7 uppercase">
+    <div className="w-full hidden lg:flex font-oswald font-medium text-white leading-5 xl:text-xl/7 uppercase relative z-40">
       {Object.entries(categories).map(([category, data]) => (
         <div
           key={category}
@@ -70,7 +70,9 @@ export default function MarketplaceLinks() {
                 >
                   <Link
                     href={`/marketplace/catalog/${subcategory.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="flex items-center justify-between px-3 py-2.5 text-xs hover:bg-gray-800 smooth-200 border-b border-brand-whitish/20 last:border-b-0"
+                    className={`flex items-center justify-between px-3 py-2.5 text-xs hover:shadow-[inset_0_0_0_1000px_rgba(75,85,99,0.8)] smooth-200 border-b border-brand-whitish/20 last:border-b-0 box-border ${
+                      hoveredSubcategory === subcategory && data.nestedSubcategories && data.nestedSubcategories[subcategory] ? 'border-t border-brand-whitish/20' : ''
+                    }`}
                   >
                     <span>{subcategory}</span>
                     {data.nestedSubcategories && data.nestedSubcategories[subcategory] && (
@@ -101,7 +103,7 @@ export default function MarketplaceLinks() {
                         <Link
                           key={nestedSubcategory}
                           href={`/marketplace/catalog/${nestedSubcategory.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="block px-3 py-2.5 text-xs hover:bg-gray-800 smooth-200 border-b border-brand-whitish/20 last:border-b-0"
+                          className="block px-3 py-2.5 text-xs hover:shadow-[inset_0_0_0_1000px_rgba(75,85,99,0.8)] smooth-200 border-b border-brand-whitish/20 last:border-b-0 box-border"
                         >
                           {nestedSubcategory}
                         </Link>

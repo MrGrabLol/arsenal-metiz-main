@@ -18,6 +18,7 @@ export default function NavMarketplace() {
   const [isOpenRegisterModal, setIsOpenRegisterModal] = useState(false);
 
   const loginRef = useRef<HTMLDivElement | null>(null);
+  const userButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useClickOutside(loginRef, () => setIsOpenLoginDropdown(false));
 
@@ -143,6 +144,7 @@ export default function NavMarketplace() {
                 </svg>
               </Link>
               <button
+                ref={userButtonRef}
                 className="hover:opacity-70 smooth-200 cursor-pointer"
                 onClick={() => setIsOpenLoginDropdown((open) => !open)}
               >
@@ -166,6 +168,7 @@ export default function NavMarketplace() {
                   <LoginDropdown
                     onToggleLoginModal={toggleLoginModal}
                     onToggleRegisterModal={toggleRegisterModal}
+                    buttonRef={userButtonRef}
                   />
                 )}
               </AnimatePresence>

@@ -18,21 +18,21 @@ export default function Page() {
         <Button
           onClick={() => setActiveTab("personal")}
           variant={activeTab === "personal" ? "primary-rounded" : "white"}
-          className={`!h-15 !text-xs md:!text-lg/4.5 border-b-0`}
+          className={`!h-12 !text-xs md:!text-sm border-b-0`}
         >
           Персональные данные
         </Button>
         <Button
           onClick={() => setActiveTab("organization")}
           variant={activeTab === "organization" ? "primary-rounded" : "white"}
-          className={`!h-15 !text-xs md:!text-lg/4.5 border-b-0`}
+          className={`!h-12 !text-xs md:!text-sm border-b-0`}
         >
           Организация
         </Button>
         <Button
           onClick={() => setActiveTab("orders")}
           variant={activeTab === "orders" ? "primary-rounded" : "white"}
-          className={`!h-15 !text-xs md:!text-lg/4.5 border-b-0`}
+          className={`!h-12 !text-xs md:!text-sm border-b-0`}
         >
           История заказов
         </Button>

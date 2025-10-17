@@ -21,11 +21,11 @@ export default function Filter({ isOpen }: FilterProps) {
     <aside
       className={`w-full h-screen fixed inset-y-0 left-0 z-[60] lg:z-auto max-w-80 lg:h-[calc(100vh-300px)] lg:sticky lg:top-52 shrink-0 -translate-x-full lg:translate-x-0 ${
         isOpen ? "translate-x-0" : "-translate-x-full"
-      } bg-brand-whitish-200 text-sm lg:text-base rounded-r-md overflow-auto smooth-200 px-6 pt-8 pb-32 lg:px-7.5 lg:pt-7.5`}
+      } bg-brand-whitish-200 text-xs lg:text-sm rounded-r-md overflow-auto smooth-200 px-6 pt-8 pb-32 lg:px-7.5 lg:pt-7.5`}
     >
       {/* Warehouse */}
       <div className="space-y-5">
-        <p className="text-xl/5 lg:text-2xl/6 font-medium">Склад:</p>
+        <p className="text-base lg:text-lg font-medium">Склад:</p>
         <div className="flex leading-4">
           <button
             onClick={() => setIsActive(0)}
@@ -47,8 +47,8 @@ export default function Filter({ isOpen }: FilterProps) {
       </div>
       {/* Cost */}
       <div className="space-y-5 mt-6">
-        <p className="text-xl/5 lg:text-2xl/6 font-medium">Цена:</p>
-        <div className="max-w-51.5 grid grid-cols-2 gap-2.5 leading-4">
+        <p className="text-base lg:text-lg font-medium">Цена:</p>
+        <div className="grid grid-cols-2 gap-2.5 leading-4">
           {/* From */}
           <input
             type="text"
@@ -65,7 +65,7 @@ export default function Filter({ isOpen }: FilterProps) {
       </div>
       {/* Existance */}
       <div className="space-y-5 mt-6">
-        <p className="text-xl/5 lg:text-2xl/6 font-medium">Отображать:</p>
+        <p className="text-base lg:text-lg font-medium">Отображать:</p>
         <div className="flex flex-col gap-2.5 leading-4">
           {/* All */}
           <input
@@ -103,7 +103,7 @@ export default function Filter({ isOpen }: FilterProps) {
       </div>
       {/* Packaging */}
       <div className="space-y-5 mt-9">
-        <p className="text-xl/5 lg:text-2xl/6 font-medium">Упаковки:</p>
+        <p className="text-base lg:text-lg font-medium">Упаковки:</p>
         <TagSelector
           availableOptions={allPackages}
           selected={packages}
@@ -112,7 +112,7 @@ export default function Filter({ isOpen }: FilterProps) {
       </div>
       {/* Diameters */}
       <div className="space-y-5 mt-12">
-        <p className="text-xl/5 lg:text-2xl/6 font-medium">Диаметр:</p>
+        <p className="text-base lg:text-lg font-medium">Диаметр:</p>
         <div className="max-w-51.5 grid grid-cols-2 gap-2.5 leading-4">
           {/* From */}
           <input
@@ -130,7 +130,7 @@ export default function Filter({ isOpen }: FilterProps) {
       </div>
       {/* Manufacturer */}
       <div className="space-y-5 mt-7">
-        <p className="text-xl/5 lg:text-2xl/6 font-medium">Производитель:</p>
+        <p className="text-base lg:text-lg font-medium">Производитель:</p>
         <TagSelector
           availableOptions={allManufacturers}
           selected={manufacturers}
@@ -139,7 +139,7 @@ export default function Filter({ isOpen }: FilterProps) {
       </div>
       {/* Stamps */}
       <div className="space-y-5 mt-7">
-        <p className="text-xl/5 lg:text-2xl/6 font-medium">Марки:</p>
+        <p className="text-base lg:text-lg font-medium">Марки:</p>
         <TagSelector
           availableOptions={allStamps}
           selected={stamps}
@@ -148,7 +148,7 @@ export default function Filter({ isOpen }: FilterProps) {
       </div>
       {/* Standards */}
       <div className="space-y-5 mt-7">
-        <p className="text-xl/5 lg:text-2xl/6 font-medium">Стандарты:</p>
+        <p className="text-base lg:text-lg font-medium">Стандарты:</p>
         <TagSelector
           availableOptions={allStandards}
           selected={standards}

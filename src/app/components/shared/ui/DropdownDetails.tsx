@@ -44,7 +44,7 @@ export function DropdownDetails({
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between gap-2 bg-white text-left text-sm/3.5 sm:text-lg/4.5 2xl:text-xl/5 cursor-pointer transition-colors duration-200 rounded-md p-2.5"
+        className="flex items-center justify-between gap-2 bg-white text-left text-xs/3.5 sm:text-sm/4.5 2xl:text-base/5 cursor-pointer transition-colors duration-200 rounded-md p-2.5"
       >
         <span>{selectedOption.label}</span>
         <motion.div
@@ -87,7 +87,7 @@ export function DropdownDetails({
               <button
                 key={option.value}
                 onClick={() => handleSelect(option)}
-                className="block  px-4 py-2 text-left hover:bg-gray-50 transition-colors duration-150 text-gray-700 font-medium first:rounded-t-lg last:rounded-b-lg"
+                className="block px-4 py-2 text-left hover:bg-gray-50 transition-colors duration-150 text-gray-700 font-medium first:rounded-t-lg last:rounded-b-lg text-xs sm:text-sm"
               >
                 {option.label}
               </button>
