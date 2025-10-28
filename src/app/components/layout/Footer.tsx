@@ -41,17 +41,6 @@ export default function Footer() {
               Эксключивный дистрибьютор
             </p>
 
-            <div className="hidden sm:flex items-center gap-2.5 mt-3.75">
-              <Image
-                src="/assets/svgs/location.svg"
-                alt="Location"
-                width={14}
-                height={19}
-              />
-              <button className="text-xs lg:text-sm hover:text-brand-brown smooth-200 cursor-pointer">
-                г. Солнечногорск
-              </button>
-            </div>
             <Button
               variant="primary"
               onClick={toggleContactManagerModal}

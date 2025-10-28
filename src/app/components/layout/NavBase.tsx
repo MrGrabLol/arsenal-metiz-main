@@ -35,19 +35,6 @@ export default function NavBase({ onToggle }: { onToggle: () => void }) {
           </Link>
         </div>
 
-        <div
-          className="sm:flex hidden items-center gap-2.5"
-        >
-          <Image
-            src="/assets/svgs/location.svg"
-            alt="Location"
-            width={14}
-            height={19}
-          />
-          <button className="whitespace-nowrap text-xs lg:text-sm hover:text-brand-brown smooth-200 cursor-pointer">
-            г. Солнечногорск
-          </button>
-        </div>
 
         <ul className="hidden lg:flex items-center gap-6 xl:gap-6 text-sm leading-5 whitespace-nowrap">
           {linksBase.map((link) => (

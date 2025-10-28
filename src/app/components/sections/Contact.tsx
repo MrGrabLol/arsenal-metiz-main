@@ -27,12 +27,10 @@ export default function Contact() {
               </p>
               <ul className="space-y-3.75">
                 <li className="flex items-center gap-3.5">
-                  <Image
+                  <img
                     src="/assets/svgs/call.svg"
                     alt="Call icon"
                     className="w-6 h-6.25"
-                    width={24}
-                    height={24}
                   />
                   <a
                     href="tel:+7 (499) 503-73-63/62"
@@ -42,12 +40,10 @@ export default function Contact() {
                   </a>
                 </li>
                 <li className="flex items-center gap-3.5">
-                  <Image
+                  <img
                     src="/assets/svgs/message.svg"
                     alt="Message icon"
                     className="w-6.25 h-4.5"
-                    width={24}
-                    height={24}
                   />
                   <a
                     href="mailto:info@arsenal-metiz.ru"
@@ -57,12 +53,10 @@ export default function Contact() {
                   </a>
                 </li>
                 <li className="flex items-center gap-3.5">
-                  <Image
+                  <img
                     src="/assets/svgs/location.svg"
                     alt="Location icon"
-                    className="w-4.5 h-6"
-                    width={24}
-                    height={24}
+                    className="w-6 h-6"
                   />
                   <p className="text-sm/3.5 lg:text-lg/4.5 font-medium hover:text-brand-brown smooth-200">
                     г. Долгопрудный, Лихачевский просп., д.18, стр.1

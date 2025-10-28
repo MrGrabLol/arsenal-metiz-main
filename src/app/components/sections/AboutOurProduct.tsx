@@ -10,14 +10,11 @@ export default function AboutOurProduct() {
             О нашей продукции
           </h1>
           <p className="leading-5 xs:text-lg/6 xl:text-2xl/8 mt-5">
-            Сварочная проволока и флюс от «Арсенал Метиз» - надежность,
-            проверенная промышленностью
+          Сварочная проволока от «Арсенал-Метиз» — надёжность, подтверждённая практикой
           </p>
           <div className="space-y-7.5 mt-4.5">
             <p className="text-sm/4.5 xs:text-base/5 xl:text-xl/6.5">
-              ММК на протяжении многих лет является крупнейшим предприятием
-              черной металлургии России и обладает огромным опытом в области
-              производства металлопродукции:
+            Мы выпускаем широкий сортамент сварочной проволоки: омеднённую и неомеднённую, сплошную и порошковую. Продукция предприятия применяется в сферах, где особенно важны качество и безопасность:
             </p>
             <ul className="grid grid-cols-2 gap-y-4 text-sm/3.5 xs:text-base/4 xl:text-xl/5 font-medium text-white">
               <li className="flex items-center gap-2 xs:gap-3">
@@ -26,22 +23,17 @@ export default function AboutOurProduct() {
               </li>
               <li className="flex items-center gap-2 xs:gap-3">
                 <span className="size-3.5 xs:size-4.5 shrink-0 bg-brand-brown rounded-2"></span>
-                <p>Атомная энергетика</p>
+                <p>Производство военной техники</p>
               </li>
               <li className="flex items-center gap-2 xs:gap-3">
                 <span className="size-3.5 xs:size-4.5 shrink-0 bg-brand-brown rounded-2"></span>
-                <p>Атомная энергетика</p>
+                <p>Нефтегазовый и химический сектор</p>
               </li>
               <li className="flex items-center gap-2 xs:gap-3">
                 <span className="size-3.5 xs:size-4.5 shrink-0 bg-brand-brown rounded-2"></span>
-                <p>Атомная энергетика</p>
+                <p>Машино- и судостроение  </p>
               </li>
             </ul>
-            <p className="text-sm/4.5 xs:text-base/5 xl:text-xl/6.5">
-              ММК на протяжении многих лет является крупнейшим предприятием
-              черной металлургии России и обладает огромным опытом в области
-              производства
-            </p>
           </div>
           {/* Buttons */}
           <div className="max-w-105 grid xs:grid-cols-2 gap-3 md:gap-5 mt-7.5">

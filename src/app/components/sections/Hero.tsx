@@ -28,7 +28,7 @@ export default function Hero() {
             российского <br /> производства
           </h1>
           <p className="text-sm lg:text-lg leading-none mt-5">
-            Поставляем то, на чем держится
+            Надёжность, рожденная трудом и опытом
           </p>
           {/* Buttons */}
           <div className="max-w-105 grid xs:grid-cols-2 gap-3 md:gap-5 mt-7.5">
