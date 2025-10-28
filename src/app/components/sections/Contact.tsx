@@ -27,9 +27,11 @@ export default function Contact() {
               </p>
               <ul className="space-y-3.75">
                 <li className="flex items-center gap-3.5">
-                  <img
+                  <Image
                     src="/assets/svgs/call.svg"
                     alt="Call icon"
+                    width={24}
+                    height={25}
                     className="w-6 h-6.25"
                   />
                   <a
@@ -40,9 +42,11 @@ export default function Contact() {
                   </a>
                 </li>
                 <li className="flex items-center gap-3.5">
-                  <img
+                  <Image
                     src="/assets/svgs/message.svg"
                     alt="Message icon"
+                    width={25}
+                    height={18}
                     className="w-6.25 h-4.5"
                   />
                   <a
@@ -53,9 +57,11 @@ export default function Contact() {
                   </a>
                 </li>
                 <li className="flex items-center gap-3.5">
-                  <img
+                  <Image
                     src="/assets/svgs/location.svg"
                     alt="Location icon"
+                    width={24}
+                    height={24}
                     className="w-6 h-6"
                   />
                   <p className="text-sm/3.5 lg:text-lg/4.5 font-medium hover:text-brand-brown smooth-200">

@@ -9,7 +9,6 @@ import { useContactModal } from "@/app/contexts/ContactModalContext";
 
 export default function Header() {
   const [isMobMenuOpen, setIsMobMenuOpen] = useState(false);
-  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
 
   const { isOpenContactManagerModal } = useContactModal();
   
@@ -27,9 +26,7 @@ export default function Header() {
           !isMarketplace
             ? "bg-nav border-b border-brand-whitish/30"
             : "bg-black"
-        } py-4 transition-transform duration-300 ${
-          isMarketplace && isNavbarHidden ? "-translate-y-full" : "translate-y-0"
-        }`}
+        } py-4 transition-transform duration-300 translate-y-0`}
       >
         <nav
           className={`${

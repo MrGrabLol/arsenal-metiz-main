@@ -31,7 +31,7 @@ export default function NavBase({ onToggle }: { onToggle: () => void }) {
       <div className="flex items-center gap-10 xl:gap-15">
         <div className="flex items-center gap-7">
           <Link href="/" className="flex items-center justify-center w-50 h-18">
-            <img src="/assets/svgs/logo.svg" alt="Logo" className="w-full h-full" />
+            <Image src="/assets/svgs/logo.svg" alt="Logo" width={200} height={72} className="w-full h-full" />
           </Link>
         </div>
 
