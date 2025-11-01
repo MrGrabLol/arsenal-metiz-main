@@ -87,6 +87,11 @@ export default function Footer() {
                   Контакты
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy" className="hover:text-brand-brown smooth-200">
+                  Политика конфиденциальности
+                </Link>
+              </li>
             </ul>
           </div>
 

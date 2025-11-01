@@ -85,7 +85,7 @@ export default function NavBase({ onToggle }: { onToggle: () => void }) {
         </div>
 
         <div className="flex items-center gap-5">
-          <button
+          {/* <button
             onClick={() => setShowSearch(!showSearch)}
             aria-label="Toggle search"
           >
@@ -96,7 +96,7 @@ export default function NavBase({ onToggle }: { onToggle: () => void }) {
               height={19}
               className="hover:scale-110 smooth-200 cursor-pointer relative z-30"
             />
-          </button>
+          </button> */}
 
           <button
             className="lg:hidden cursor-pointer relative z-20"

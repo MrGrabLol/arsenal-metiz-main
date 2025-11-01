@@ -22,67 +22,31 @@ interface NewsItem {
 const newsItems: NewsItem[] = [
   {
     id: 1,
-    date: "25 апреля 2025...",
-    title:
-      "ММК примет в Магнитогорске форум по цифровизации Smart Mining Metals",
+    date: "15 января 2024",
+    title: "Запуск нового металлургического производства",
     image: "/assets/images/news.png",
     link: "/news/1",
   },
   {
     id: 2,
-    date: "25 апреля 2025...",
-    title:
-      "ММК примет в Магнитогорске форум по цифровизации Smart Mining Metals",
+    date: "10 января 2024",
+    title: "Запуск производства электроэрозионной проволоки",
     image: "/assets/images/news.png",
     link: "/news/2",
   },
   {
     id: 3,
-    date: "25 апреля 2025...",
-    title:
-      "ММК примет в Магнитогорске форум по цифровизации Smart Mining Metals",
+    date: "5 января 2024",
+    title: "Международная выставка MetalExpo 2025",
     image: "/assets/images/news.png",
     link: "/news/3",
   },
   {
     id: 4,
-    date: "25 апреля 2025...",
-    title:
-      "ММК примет в Магнитогорске форум по цифровизации Smart Mining Metals",
+    date: "1 января 2024",
+    title: "«Арсенал-Метиз»: от модернизации к производству будущего",
     image: "/assets/images/news.png",
     link: "/news/4",
-  },
-  {
-    id: 5,
-    date: "25 апреля 2025...",
-    title:
-      "ММК примет в Магнитогорске форум по цифровизации Smart Mining Metals",
-    image: "/assets/images/news.png",
-    link: "/news/5",
-  },
-  {
-    id: 6,
-    date: "25 апреля 2025...",
-    title:
-      "ММК примет в Магнитогорске форум по цифровизации Smart Mining Metals",
-    image: "/assets/images/news.png",
-    link: "/news/6",
-  },
-  {
-    id: 7,
-    date: "25 апреля 2025...",
-    title:
-      "ММК примет в Магнитогорске форум по цифровизации Smart Mining Metals",
-    image: "/assets/images/news.png",
-    link: "/news/7",
-  },
-  {
-    id: 8,
-    date: "25 апреля 2025...",
-    title:
-      "ММК примет в Магнитогорске форум по цифровизации Smart Mining Metals",
-    image: "/assets/images/news.png",
-    link: "/news/8",
   },
 ];
 
@@ -196,15 +160,7 @@ export default function NewsSlider() {
               isLink
               href="/news"
             >
-              Пресс-центр
-            </Button>
-            <Button
-              variant="secondary"
-              className="w-full xs:w-auto"
-              isLink
-              href="/"
-            >
-              Подписаться на новости
+              Все новости
             </Button>
           </div>
 

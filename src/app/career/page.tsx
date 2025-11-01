@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Button from "../components/shared/ui/Button";
 
 // Моковые данные для вакансий
@@ -52,6 +53,9 @@ const mockVacancies = [
 ];
 
 export default function CareerPage() {
+  const [applyModalVacancy, setApplyModalVacancy] = useState<string | null>(null);
+  const [isSendResumeOpen, setIsSendResumeOpen] = useState(false);
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('ru-RU', {
@@ -147,8 +151,8 @@ export default function CareerPage() {
           {/* Vacancies Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mockVacancies.map((vacancy) => (
-              <div key={vacancy.id} className="bg-brand-dark-gray rounded-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-                <div className="p-6">
+              <div key={vacancy.id} className="bg-brand-dark-gray rounded-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] h-full">
+                <div className="p-6 h-full flex flex-col">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
@@ -179,13 +183,13 @@ export default function CareerPage() {
                   </div>
 
                   {/* Salary and Apply */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mt-auto">
                     <div className="text-brand-brown-100 font-semibold text-lg">
                       {vacancy.salary}
                     </div>
                     <Button 
                       variant="primary"
-                      onClick={() => alert('Функция отправки резюме будет добавлена позже')}
+                      onClick={() => setApplyModalVacancy(vacancy.title)}
                       className="px-6 py-2 text-sm"
                     >
                       Откликнуться
@@ -207,7 +211,7 @@ export default function CareerPage() {
               <div className="flex justify-center">
                 <Button 
                   variant="primary"
-                  onClick={() => alert('Функция отправки резюме будет добавлена позже')}
+                  onClick={() => setIsSendResumeOpen(true)}
                   className="px-8 py-4 text-lg"
                 >
                   Отправить резюме
@@ -217,6 +221,31 @@ export default function CareerPage() {
           </div>
         </div>
       </section>
+      
+      {/* Apply Modal */}
+      {applyModalVacancy && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" onClick={() => setApplyModalVacancy(null)}>
+          <div className="bg-white rounded-lg max-w-md w-full p-6 text-center" onClick={(e) => e.stopPropagation()}>
+            <div className="text-6xl mb-4">💼</div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">Отклик на вакансию</h3>
+            <p className="text-gray-600 mb-1">{applyModalVacancy}</p>
+            <p className="text-gray-600 mb-4">Функция подачи резюме будет реализована позже.</p>
+            <Button variant="primary" onClick={() => setApplyModalVacancy(null)} className="w-full">Понятно</Button>
+          </div>
+        </div>
+      )}
+
+      {/* Send Resume Modal */}
+      {isSendResumeOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" onClick={() => setIsSendResumeOpen(false)}>
+          <div className="bg-white rounded-lg max-w-md w-full p-6 text-center" onClick={(e) => e.stopPropagation()}>
+            <div className="text-6xl mb-4">📩</div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">Отправить резюме</h3>
+            <p className="text-gray-600 mb-4">Раздел отправки резюме будет добавлен позже. Следите за обновлениями.</p>
+            <Button variant="primary" onClick={() => setIsSendResumeOpen(false)} className="w-full">Понятно</Button>
+          </div>
+        </div>
+      )}
     </>
   );
 } 

@@ -26,9 +26,11 @@ export default function Faqs() {
 
           <div className="max-w-200 mx-auto text-center space-y-7.5">
             <h2>Есть вопросы или нужна консультация? свяжитесь с нами!</h2>
-            <Button variant="primary" onClick={openModal}>
-              Обратная связь
-            </Button>
+            <div className="flex justify-center">
+              <Button variant="primary" onClick={openModal}>
+                Обратная связь
+              </Button>
+            </div>
           </div>
         </div>
       </section>

@@ -10,39 +10,25 @@ type block = {
 
 const blocks: block[] = [
   {
-    title: "Марки",
+    title: "Виды проволоки",
     texts: [
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
+      "Легированная",
+      "Высоколегированная",
+      "Наплавленная",
+      "Медно-никелевые сплавы",
+      "Электроэрозионная",
+      "Микропроволока",
+      "Коррозионностойкая",
+      "Проволока из прецизионных металлов с высоким электрическим сопротивлением",
     ],
   },
   {
     title: "Упаковки",
     texts: [
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-    ],
-  },
-  {
-    title: "Диаметр",
-    texts: [
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
-      "Подберем оптимальный вариант под ваш станок",
+      "Мотки",
+      "Кассеты",
+      "Бочки",
+      "Прутки разной длины",
     ],
   },
 ];
@@ -66,26 +52,41 @@ export default function OurRange() {
 
         {/* Block */}
         <div className="flex flex-col xl:flex-row xl:items-stretch gap-7.5">
-          <div className="flex-1 sm:max-w-3/4 mx-auto lg:max-w-none grid lg:grid-cols-3 bg-brand-dark-gray border border-brand-whitish/30 divide-x divide-brand-whitish/30 rounded-md">
+          <div className="flex-1 sm:max-w-3/4 mx-auto lg:max-w-none grid lg:grid-cols-2 bg-gradient-to-br from-brand-dark-gray to-brand-dark border border-brand-brown/30 divide-x divide-brand-brown/20 rounded-lg shadow-2xl overflow-hidden">
             {blocks.map((item, idx) => (
-              <div key={idx}>
+              <div key={idx} className="group hover:bg-brand-dark/50 transition-all duration-300">
                 {/* Header */}
                 <div
-                  className={`text-center text-lg/5 font-medium border-b border-brand-whitish/30 ${
-                    idx === 1 || idx === 2
+                  className={`text-center text-xl font-semibold border-b border-brand-brown/30 ${
+                    idx === 1
                       ? "border-t border-brand-dark/30 lg:border-t-0"
                       : ""
-                  } py-6`}
+                  } py-8 bg-gradient-to-r from-brand-brown/10 to-transparent`}
                 >
-                  {item.title}
+                  <div className="flex items-center justify-center gap-3">
+                    {idx === 0 ? (
+                      <svg className="w-6 h-6 text-brand-brown-100" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+                      </svg>
+                    ) : (
+                      <svg className="w-6 h-6 text-brand-brown-100" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h12v8H4V6z" clipRule="evenodd" />
+                      </svg>
+                    )}
+                    <span className="text-brand-brown-100">{item.title}</span>
+                  </div>
                 </div>
 
                 {/* Body */}
-                <ul className="space-y-5 leading-5 py-5 px-7.5">
-                  {item.texts.map((text, idx) => (
-                    <li className="flex gap-3" key={idx}>
-                      <span className="size-3.5 shrink-0 bg-brand-brown rounded-2"></span>
-                      <p>{text}</p>
+                <ul className="space-y-2 py-6 px-8">
+                  {item.texts.map((text, textIdx) => (
+                    <li className="flex items-start gap-3 group/item hover:bg-brand-brown/5 rounded-lg p-2 transition-all duration-200" key={textIdx}>
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-2 h-2 bg-gradient-to-r from-brand-brown to-brand-brown-100 rounded-full group-hover/item:scale-125 transition-transform duration-200"></div>
+                      </div>
+                      <p className="text-sm leading-relaxed text-gray-200 group-hover/item:text-white transition-colors duration-200">
+                        {text}
+                      </p>
                     </li>
                   ))}
                 </ul>

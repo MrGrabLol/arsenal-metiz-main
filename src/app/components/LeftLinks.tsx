@@ -55,7 +55,7 @@ export default function LeftLinks() {
       <div className="relative size-full flex-center pl-7 pr-5 xs:pl-11 xs:pr-6">
         <button
           onClick={toggleLinks}
-          className={`size-7.5 shrink-0 absolute top-24 right-5 flex-center border-brand-whitish/30 ${
+          className={`size-7.5 shrink-0 absolute top-32 md:top-36 right-5 flex-center border-brand-whitish/30 ${
             !isLinksOpen
               ? "!-right-8 border-y border-r rounded-r"
               : "border rounded"

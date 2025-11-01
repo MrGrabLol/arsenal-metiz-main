@@ -79,7 +79,7 @@ export default function Contact() {
             </div>
             <div className="flex-1 h-80 rounded-md overflow-hidden">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?um=constructor%3A40e3085364203a508bce77d7270bc0f2b250e7a8ed232f66817d4685b9ea32e3&amp;source=constructor"
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac3009bc31f18191af3aa37c26553e5c5039e7ddcf312e046103844230b3b344a&amp;source=constructor"
                 className="w-full h-80"
               ></iframe>
             </div>

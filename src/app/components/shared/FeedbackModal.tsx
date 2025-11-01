@@ -110,7 +110,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
           </div>
 
           {/* Submit Button */}
-          <div className="pt-4">
+          <div className="pt-4 space-y-3">
             <Button
               type="submit"
               variant="primary"
@@ -118,6 +118,9 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
             >
               Отправить
             </Button>
+            <p className="text-xs text-gray-500 text-center leading-relaxed">
+              *Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных
+            </p>
           </div>
         </form>
       </div>

@@ -142,9 +142,14 @@ export default function ContactManagerModal() {
               </div>
             </div>
 
-            <Button variant="primary" className="w-full h-12 md:h-13.5">
-              Зарегистрироваться
-            </Button>
+            <div className="md:col-span-2 space-y-3">
+              <Button variant="primary" className="w-full h-12 md:h-13.5">
+                Зарегистрироваться
+              </Button>
+              <p className="text-xs text-gray-500 text-center leading-relaxed">
+                *Нажимая кнопку «Зарегистрироваться», я даю свое согласие на обработку моих персональных данных
+              </p>
+            </div>
           </form>
         </div>
       </div>
