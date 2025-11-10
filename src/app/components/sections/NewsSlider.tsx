@@ -22,28 +22,28 @@ interface NewsItem {
 const newsItems: NewsItem[] = [
   {
     id: 1,
-    date: "15 января 2024",
+    date: "15 июня 2025",
     title: "Запуск нового металлургического производства",
     image: "/assets/images/news.png",
     link: "/news/1",
   },
   {
     id: 2,
-    date: "10 января 2024",
+    date: "27 марта 2025",
     title: "Запуск производства электроэрозионной проволоки",
     image: "/assets/images/news.png",
     link: "/news/2",
   },
   {
     id: 3,
-    date: "5 января 2024",
+    date: "2 июля 2025",
     title: "Международная выставка MetalExpo 2025",
     image: "/assets/images/news.png",
     link: "/news/3",
   },
   {
     id: 4,
-    date: "1 января 2024",
+    date: "30 сентября 2025",
     title: "«Арсенал-Метиз»: от модернизации к производству будущего",
     image: "/assets/images/news.png",
     link: "/news/4",

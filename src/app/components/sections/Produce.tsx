@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Button from "../shared/ui/Button";
 
 export default function Produce() {

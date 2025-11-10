@@ -147,7 +147,15 @@ export default function ContactManagerModal() {
                 Зарегистрироваться
               </Button>
               <p className="text-xs text-gray-500 text-center leading-relaxed">
-                *Нажимая кнопку «Зарегистрироваться», я даю свое согласие на обработку моих персональных данных
+                *Нажимая кнопку «Зарегистрироваться», я даю свое согласие на обработку моих{" "}
+                <a 
+                  href="/privacy" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-brand-brown hover:text-brand-brown-100 underline transition-colors"
+                >
+                  персональных данных
+                </a>
               </p>
             </div>
           </form>

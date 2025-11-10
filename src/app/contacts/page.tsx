@@ -216,7 +216,15 @@ export default function ContactsPage() {
                     Отправить сообщение
                   </Button>
                   <p className="text-xs text-brand-dark-gray-200 leading-relaxed">
-                    *Нажимая кнопку «Отправить сообщение», я даю свое согласие на обработку моих персональных данных
+                    *Нажимая кнопку «Отправить сообщение», я даю свое согласие на обработку моих{" "}
+                    <a 
+                      href="/privacy" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-brand-brown-100 hover:text-brand-brown underline transition-colors"
+                    >
+                      персональных данных
+                    </a>
                   </p>
                 </div>
               </form>
